@@ -3,25 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador de Visitas</title>
-    <link rel="stylesheet" href="./public/style.css">
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Bienvenido a mi página</h1>
+        <h1 id="welcome-message">¡Bienvenido!</h1>
         <p>Esta página ha sido visitada <span id="visit-count">0</span> veces.</p>
+        <form id="name-form">
+            <label for="name-input">¿Cómo te llamas?</label>
+            <input type="text" id="name-input" placeholder="Escribe tu nombre">
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
-    <script>
-        // Obtener el contador de visitas del servidor
-        fetch('visits')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visit-count').textContent = data.count;
-            })
-            .catch(error => {
-                console.error('Error al cargar el contador de visitas:', error);
-            });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
