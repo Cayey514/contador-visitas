@@ -14,7 +14,7 @@
 
     <script>
         // Obtener el contador de visitas del servidor
-        fetch('/visits')
+        fetch('visits')
             .then(response => response.json())
             .then(data => {
                 document.getElementById('visit-count').textContent = data.count;
