@@ -5,8 +5,8 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Middleware para servir archivos estáticos desde la carpeta "public"
-app.use(express.static(path.join(__dirname, 'public')));
+// Middleware para servir archivos estáticos desde la raíz del proyecto
+app.use(express.static(__dirname));
 
 // Ruta para obtener el número de visitas
 app.get('/visits', (req, res) => {
