@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Visitas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a mi página</h1>
+        <p>Esta página ha sido visitada <span id="visit-count">0</span> veces.</p>
+    </div>
+
+    <script>
+        // Obtener el contador de visitas del servidor
+        fetch('/visits')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visit-count').textContent = data.count;
+            })
+            .catch(error => {
+                console.error('Error al cargar el contador de visitas:', error);
+            });
+    </script>
+</body>
+</html>
